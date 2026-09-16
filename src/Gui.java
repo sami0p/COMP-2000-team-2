@@ -63,7 +63,7 @@ public class Gui extends JFrame implements AppConstants {
         startGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                  JFrame frame = new JFrame("Prehistoric Plains Simulation");
+                  JFrame frame = new JFrame("Predator Prey Assignment");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
                 frame.setLocationRelativeTo(null);
