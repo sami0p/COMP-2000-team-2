@@ -3,6 +3,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.awt.image.BufferedImage;
 
 public class Simulator extends JPanel {
     private List<Animal> animals = new ArrayList<>(); // will contain all the animals in the scene
@@ -11,6 +12,9 @@ public class Simulator extends JPanel {
     private List<Plant> plants = new ArrayList<>();
     private final Random random = new Random();
     private final int targetPlantCount = 12;
+
+    private final BufferedImage background =
+        SpriteLoader.load("src/assets/background.png");
 
     public Simulator() {
 
@@ -89,6 +93,10 @@ public class Simulator extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+       
+        if (background != null) {
+        g2.drawImage(background, 0, 0, getWidth(), getHeight(), null);
+}
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         for (int i = 0; i < environment.size(); i++) { // draws all elements in the environment
